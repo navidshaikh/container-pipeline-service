@@ -9,7 +9,17 @@ import os
 LOG_LEVEL = os.environ.get('LOG_LEVEL') or 'DEBUG'
 
 LOG_PATH = '/srv/pipeline-logs/cccp.log'
+
 SERVICE_LOGFILE = "service_debug.log"
+
+LINTER_RESULT_FILE = "linter_results.txt"
+
+LINTER_STATUS_FILE = "linter_status.json"
+
+LOGS_DIR_BASE = "/srv/pipeline-logs/"
+
+LOGS_URL_BASE = "https://registry.centos.org/pipeline-logs/"
+
 
 LOGGING_CONF = dict(
     version=1,
