@@ -31,7 +31,8 @@ class BaseWorker(object):
 
     def export_logs(self, logs, destination):
         """"Write logs in given destination"""
-        self.logger.debug('Writing build logs to NFS share')
+
+        self.logger.debug('Writing logs at destination: %s', destination)
         # to take care if the logs directory is not created
         if not os.path.exists(os.path.dirname(destination)):
             os.makedirs(os.path.dirname(destination))
@@ -41,6 +42,22 @@ class BaseWorker(object):
                 fin.write(logs)
         except IOError as e:
             self.logger.critical("Failed writing logs to {}"
+                                 .format(destination))
+            self.logger.critical(str(e))
+
+    def export_json_logs(self, logs, destination):
+        """Write JSON logs in given destination"""
+
+        self.logger.debug("Writing JSON logs at destination: %s", destination)
+        # to take care if the logs directory is not created
+        if not os.path.exists(os.path.dirname(destination)):
+            os.makedirs(os.path.dirname(destination))
+
+        try:
+            with open(destination, "w") as fin:
+                json.dump(logs, fin)
+        except IOError as e:
+            self.logger.critical("Failed dumping JSON logs to {}"
                                  .format(destination))
             self.logger.critical(str(e))
 
