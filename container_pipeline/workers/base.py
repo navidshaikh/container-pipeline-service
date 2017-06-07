@@ -32,7 +32,7 @@ class BaseWorker(object):
     def export_logs(self, logs, destination):
         """"Write logs in given destination"""
 
-        self.logger.debug('Writing logs at destination: %s', destination)
+        self.logger.info('Writing logs at destination: %s', destination)
         # to take care if the logs directory is not created
         if not os.path.exists(os.path.dirname(destination)):
             os.makedirs(os.path.dirname(destination))
@@ -48,7 +48,7 @@ class BaseWorker(object):
     def export_json_logs(self, logs, destination):
         """Write JSON logs in given destination"""
 
-        self.logger.debug("Writing JSON logs at destination: %s", destination)
+        self.logger.info("Writing JSON logs at destination: %s", destination)
         # to take care if the logs directory is not created
         if not os.path.exists(os.path.dirname(destination)):
             os.makedirs(os.path.dirname(destination))
