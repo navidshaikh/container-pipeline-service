@@ -13,6 +13,8 @@ from container_pipeline.model_tmp.containers import form_Dockerfile_link, Contai
 
 # Container Info Collector
 container_info = ContainerLinksModel()
+from container_pipeline.lib import dj  # noqa
+# Fix integration of django with other Python scripts.
 
 # populate container_pipeline module path
 cp_module_path = os.path.join(
@@ -28,7 +30,6 @@ from container_pipeline.lib.log import load_logger
 from glob import glob
 
 from container_pipeline.models import Project
-from container_pipeline.lib import dj
 
 jjb_defaults_file = 'project-defaults.yml'
 
@@ -261,8 +262,9 @@ def main(indexdlocation):
                 exit(1)
             Project.objects.get_or_create(
                 name='{}-{}-{}'.format(
-                    project['jobid'], project['appid'],
-                    project['desired_tag']))
+                    project[0]['project']['jobid'],
+                    project[0]['project']['appid'],
+                    project[0]['project']['desired_tag']))
 
             new_projects_names.append(
                 str(project[0]["project"]["appid"]) + "-" +
@@ -296,8 +298,8 @@ def main(indexdlocation):
     logger.debug("Exporting current project names.")
     export_new_project_names(new_projects_names)
 
+
 if __name__ == '__main__':
-    dj.load()
     load_logger()
     logger = logging.getLogger('jenkins')
     main(sys.argv[1])
