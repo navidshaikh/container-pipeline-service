@@ -29,5 +29,6 @@ class Command(BaseCommand):
                 container_image = ContainerImage.objects.get(name=project)
                 container_image.delete()
             except Exception as e:
-                logger.critical("Error deleting image {}".format(container_image))
+                logger.critical("Error deleting image {}".format(
+                    container_image))
                 logger.error(e)
