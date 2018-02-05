@@ -1,6 +1,22 @@
+## Want to deploy your own pipeline?
+
 This will allow you to bring up a single or multi-node setup of the Container Pipeline Service.
 
 We use Ansible Playbooks in order to provision the service. As long as your OS is accesible over SSH, you can set up the host(s):
+
+### Understanding the components:
+
+#### [1. Creating maintenance window at Zabbix](#1-creating-maintenance-window-at-zabbix)
+
+foo
+
+#### [2. Clean up utilities](#2-clean-up-utilities)
+
+bar
+
+#### [3. Provisioning](#3-provisioning)
+
+viz
 
 ```sh
 $ git clone https://github.com/CentOS/container-pipeline-service/
