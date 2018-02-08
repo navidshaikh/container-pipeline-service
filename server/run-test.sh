@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# print the commands ran in this script
+set -x
+
 NFS_SHARE="/srv/pipeline-logs"
 LOGS_DIR="${NFS_SHARE}/${TEST_TAG}"
 

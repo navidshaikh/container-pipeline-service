@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# print the commands ran in this script
+set -x
+
 function _() {
     echo "==> $@"
 }
