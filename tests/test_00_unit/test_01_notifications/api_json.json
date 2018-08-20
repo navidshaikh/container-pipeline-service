@@ -1,0 +1,322 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+  "actions": [
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [
+        {
+          "_class": "io.fabric8.jenkins.openshiftsync.BuildCause",
+          "shortDescription": "OpenShift Build cccp/navidshaikh-anomaly-latest-2 from https://github.com/navidshaikh/anomaly"
+        },
+        {
+          "_class": "hudson.triggers.SCMTrigger$SCMTriggerCause",
+          "shortDescription": "Started by an SCM change"
+        }
+      ]
+    },
+    {
+      
+    },
+    {
+      "_class": "hudson.model.ParametersAction",
+      "parameters": [
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "GIT_URL",
+          "value": "https://github.com/navidshaikh/anomaly"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "GIT_BRANCH",
+          "value": "master"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "GIT_PATH",
+          "value": "/"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "TARGET_FILE",
+          "value": "Dockerfile"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "DESIRED_TAG",
+          "value": "latest"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "NOTIFY_EMAIL",
+          "value": "shaikhnavid14@gmail.com"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "DEPENDS_ON",
+          "value": "None"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "BUILD_CONTEXT",
+          "value": "./"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PIPELINE_NAME",
+          "value": "navidshaikh-anomaly-latest"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "APP_ID",
+          "value": "navidshaikh"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "JOB_ID",
+          "value": "anomaly"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PRE_BUILD_SCRIPT",
+          "value": "None"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PRE_BUILD_CONTEXT",
+          "value": "None"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "REGISTRY_URL",
+          "value": "172.29.33.48:5000"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PIPELINE_REPO_DIR",
+          "value": "/tmp/pipeline-service"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "APP_ID",
+          "value": "navidshaikh"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "JOB_ID",
+          "value": "anomaly"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "GIT_PATH",
+          "value": "/"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PRE_BUILD_SCRIPT",
+          "value": "None"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PRE_BUILD_CONTEXT",
+          "value": "None"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "DEPENDS_ON",
+          "value": "None"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "DESIRED_TAG",
+          "value": "latest"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PIPELINE_NAME",
+          "value": "navidshaikh-anomaly-latest"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "BUILD_CONTEXT",
+          "value": "./"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "REGISTRY_URL",
+          "value": "172.29.33.48:5000"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "PIPELINE_REPO_DIR",
+          "value": "/tmp/pipeline-service"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "GIT_BRANCH",
+          "value": "master"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "GIT_URL",
+          "value": "https://github.com/navidshaikh/anomaly"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "TARGET_FILE",
+          "value": "Dockerfile"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "NOTIFY_EMAIL",
+          "value": "shaikhnavid14@gmail.com"
+        }
+      ]
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class": "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName": {
+        "origin/master": {
+          "_class": "hudson.plugins.git.util.Build",
+          "buildNumber": 2,
+          "buildResult": null,
+          "marked": {
+            "SHA1": "7e8996417ad7aa438d13190122e895b96914f952",
+            "branch": [
+              {
+                "SHA1": "7e8996417ad7aa438d13190122e895b96914f952",
+                "name": "origin/master"
+              }
+            ]
+          },
+          "revision": {
+            "SHA1": "7e8996417ad7aa438d13190122e895b96914f952",
+            "branch": [
+              {
+                "SHA1": "7e8996417ad7aa438d13190122e895b96914f952",
+                "name": "origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "7e8996417ad7aa438d13190122e895b96914f952",
+        "branch": [
+          {
+            "SHA1": "7e8996417ad7aa438d13190122e895b96914f952",
+            "name": "origin/master"
+          }
+        ]
+      },
+      "remoteUrls": [
+        "https://github.com/navidshaikh/anomaly"
+      ],
+      "scmName": ""
+    },
+    {
+      "_class": "hudson.plugins.git.GitTagAction"
+    },
+    {
+      
+    },
+    {
+      "_class": "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName": {
+        "refs/remotes/origin/email-1": {
+          "_class": "hudson.plugins.git.util.Build",
+          "buildNumber": 2,
+          "buildResult": null,
+          "marked": {
+            "SHA1": "ed0abc5efdc359a90808f5a07f743dd05c3e6f96",
+            "branch": [
+              {
+                "SHA1": "ed0abc5efdc359a90808f5a07f743dd05c3e6f96",
+                "name": "refs/remotes/origin/email-1"
+              }
+            ]
+          },
+          "revision": {
+            "SHA1": "ed0abc5efdc359a90808f5a07f743dd05c3e6f96",
+            "branch": [
+              {
+                "SHA1": "ed0abc5efdc359a90808f5a07f743dd05c3e6f96",
+                "name": "refs/remotes/origin/email-1"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "ed0abc5efdc359a90808f5a07f743dd05c3e6f96",
+        "branch": [
+          {
+            "SHA1": "ed0abc5efdc359a90808f5a07f743dd05c3e6f96",
+            "name": "refs/remotes/origin/email-1"
+          }
+        ]
+      },
+      "remoteUrls": [
+        "https://github.com/navidshaikh/ccp-openshift"
+      ],
+      "scmName": ""
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.cps.EnvActionImpl"
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.views.FlowGraphAction"
+    },
+    {
+      
+    },
+    {
+      
+    }
+  ],
+  "artifacts": [
+    
+  ],
+  "building": false,
+  "description": "OpenShift Build cccp/navidshaikh-anomaly-latest-2 from https://github.com/navidshaikh/anomaly",
+  "displayName": "#2",
+  "duration": 85872,
+  "estimatedDuration": 85447,
+  "executor": null,
+  "fullDisplayName": "cccp » cccp/navidshaikh-anomaly-latest #2",
+  "id": "2",
+  "keepLog": false,
+  "number": 2,
+  "queueId": 189,
+  "result": "SUCCESS",
+  "timestamp": 1534501562890,
+  "url": "https://jenkins-cccp.172.29.33.23.nip.io/job/cccp/job/cccp-navidshaikh-anomaly-latest/2/",
+  "changeSets": [
+    
+  ],
+  "nextBuild": null,
+  "previousBuild": {
+    "number": 1,
+    "url": "https://jenkins-cccp.172.29.33.23.nip.io/job/cccp/job/cccp-navidshaikh-anomaly-latest/1/"
+  }
+}
