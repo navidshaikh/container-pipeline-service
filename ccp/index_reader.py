@@ -503,7 +503,9 @@ class Index(object):
         in batches and oc apply the weekly scan jobs at the end
         """
         # Split the projects to process in equal sized chunks
-        for batch in self.batch(index_projects, batch_size):
+        generator_obj = self.batch(index_projects, batch_size)
+
+        for batch in generator_obj:
             outstanding_builds = True
             while outstanding_builds:
                 # Check if builds are in status.phase other than Complete
@@ -524,6 +526,11 @@ class Index(object):
             for project in batch:
                 # oc process and oc apply to all fresh and existing jobs
                 self.bc_manager.apply_build_job(project)
+            # sleep for $poll_cycle seconds after processing each batch
+            # to have them appeared on the console
+            print ("Waiting for {} seconds to process current batch".format(
+                poll_cycle))
+            time.sleep(poll_cycle)
 
         print ("Processing weekly scan projects..")
         for project in index_projects:
