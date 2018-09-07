@@ -84,18 +84,14 @@ objects:
                     }
                     finally {
                       stage("Notify user"){
-                        dir("${PIPELINE_REPO_DIR}") {
-                          git url: '${PIPELINE_REPO}', branch: '${PIPELINE_BRANCH}'
-                          }
-
                         if (image_in_registry==true) {
                           if (success==true) {
-                            sh "cd ${PIPELINE_REPO_DIR} && ls && ls ccp &&PYTHONPATH=${PIPELINE_REPO_DIR} python ccp/notifications/weeklynotify.py success cccp `oc get route jenkins -o template --template={{.spec.host}}` ${image_name} ${BUILD_NUMBER}"
+                            sh "PYTHONPATH=${PIPELINE_REPO_DIR} python ${PIPELINE_REPO_DIR}/ccp/notifications/weeklynotify.py success cccp `oc get route jenkins -o template --template={{.spec.host}}` ${image_name} ${BUILD_NUMBER}"
                           } else {
-                            sh "cd ${PIPELINE_REPO_DIR} && PYTHONPATH=${PIPELINE_REPO_DIR} python ccp/notifications/weeklynotify.py failure cccp `oc get route jenkins -o template --template={{.spec.host}}` ${image_name} ${BUILD_NUMBER}"
+                            sh "PYTHONPATH=${PIPELINE_REPO_DIR} python ${PIPELINE_REPO_DIR}/ccp/notifications/weeklynotify.py failure cccp `oc get route jenkins -o template --template={{.spec.host}}` ${image_name} ${BUILD_NUMBER}"
                           }
                         } else {
-                            sh "cd ${PIPELINE_REPO_DIR} && PYTHONPATH=${PIPELINE_REPO_DIR} python ccp/notifications/weeklynotify.py image_absent cccp `oc get route jenkins -o template --template={{.spec.host}}` ${image_name} ${BUILD_NUMBER}"
+                            sh "PYTHONPATH=${PIPELINE_REPO_DIR} python ${PIPELINE_REPO_DIR}/ccp/notifications/weeklynotify.py image_absent cccp `oc get route jenkins -o template --template={{.spec.host}}` ${image_name} ${BUILD_NUMBER}"
                           }
                       }
                     }
@@ -162,4 +158,4 @@ parameters:
   displayName: Pipeline repo directory
   name: PIPELINE_REPO_DIR
   required: true
-  value: /tmp/pipeline-service
+  value: /opt/ccp-openshift
