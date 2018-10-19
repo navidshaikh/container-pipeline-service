@@ -17,6 +17,8 @@ ENV PYTHONPATH="/opt/ccp_api_server"
 
 COPY . /opt/ccp_api_server
 
+RUN useradd 1001 && usermod -aG 0 1001 && chown 1001:0 /opt/ccp_api_server && chmod -R g+x /opt/ccp_api_server
+
 WORKDIR /opt/ccp_api_server/ccp/apis/server/
 
 EXPOSE 8080
@@ -24,3 +26,5 @@ EXPOSE 8080
 ENTRYPOINT ["/usr/bin/python3"]
 
 CMD ["-m", "ccp_server"]
+
+USER 1001
